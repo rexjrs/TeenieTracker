@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import Navigation from 'react-native-deprecated-custom-components';
 import Main from './app/Main';
+import Login from './app/Login';
 
 export default class TeenieTrack extends Component {
     constructor(props) {
@@ -20,13 +21,15 @@ export default class TeenieTrack extends Component {
         switch(route.id){
             case 'main':
             return (<Main navigator={navigator} route={route} title="Main Page"/>)
+            case 'login':
+            return (<Login navigator={navigator} route={route} title="Login Page"/>)
         }
     }
 
     render() {
         return (
             <Navigation.Navigator
-                initialRoute={{id: 'main'}}
+                initialRoute={{id: 'login'}}
                 renderScene={this.renderScene}
             />
         );

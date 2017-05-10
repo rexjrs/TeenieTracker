@@ -5,15 +5,12 @@ import {
     Text,
     View
 } from 'react-native';
-import RenderIf from './RenderIf';
 
-export default class Boiler extends Component {
+export default class Tracker extends Component {
     render() {
         return (
             <View style={styles.container}>
-                {RenderIf(this.state.loginFailed)(
 
-                )}
             </View>
         );
     }
