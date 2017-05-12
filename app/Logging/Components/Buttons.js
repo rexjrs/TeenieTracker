@@ -9,18 +9,37 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class Buttons extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+
+        };
+    }
+
+    addMeal(){
+        this.props.navigator.push({id: 'addMeal'})
+    }
+
+    snack(){
+        this.props.navigator.push({id: 'snack'})
+    }
+
+    exercise(){
+        this.props.navigator.push({id: 'exercise'})
+    }
+
     render() {
         return (
             <View style={styles.btnContainer}>
-                <TouchableOpacity style={styles.addMeal}>
+                <TouchableOpacity onPress={this.addMeal.bind(this)} style={styles.addMeal}>
                     <Icon name="ios-beer-outline" size={25} color="white"/>
                     <Text style={styles.addMealTxt}>ADD MEAL</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.addMeal}>
+                <TouchableOpacity onPress={this.snack.bind(this)} style={styles.addMeal}>
                     <Icon name="ios-beer-outline" size={25} color="white"/>
                     <Text style={styles.addMealTxt}>ADD SNACK</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.addMeal}>
+                <TouchableOpacity onPress={this.exercise.bind(this)} style={styles.addMeal}>
                     <Icon name="ios-beer-outline" size={25} color="white"/>
                     <Text style={styles.addMealTxt}>ADD EXERCISE</Text>
                 </TouchableOpacity>

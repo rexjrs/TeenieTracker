@@ -17,7 +17,7 @@ export default class Logging extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.btnContainer}>
-                    <Buttons />
+                    <Buttons navigator={this.props.navigator}/>
                 </View>
                 <Cards />
             </View>
